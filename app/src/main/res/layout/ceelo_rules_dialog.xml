@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="40dp"
+    android:background="@color/rulesBackgroundColor"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -17,7 +18,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rules:"
+        android:text="@string/rules"
+        android:textColor="@color/textColor"
         android:gravity="center"
         android:textSize="24sp" />
 
@@ -25,35 +27,40 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Automatic win: rolling a 4-5-6."
+        android:text="@string/rules_automatic_win"
+        android:textColor="@color/textColor"
         android:textSize="16sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Automatic loss: rolling a 1-2-3"
+        android:text="@string/rules_automatic_loss"
+        android:textColor="@color/textColor"
         android:textSize="16sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Trips: rolling three same numbers is known as rolling a trip. Higher trips beat lower trips, so 4-4-4 is better than 3-3-3. Any trips beats any established point."
+        android:textColor="@color/textColor"
+        android:text="@string/rules_trips"
         android:textSize="16sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Point: rolling a pair, and another number, establishes the singleton as a 'point'. A higher point beats a lower point, so 2-2-6 is better than 5-5-2."
+        android:textColor="@color/textColor"
+        android:text="@string/rules_point"
         android:textSize="16sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Any other roll is a meaningless combination and must be rerolled until one of the above combinations occurs. "
+        android:textColor="@color/textColor"
+        android:text="@string/rules_all_other_rolls"
         android:textSize="16sp" />
 
 
@@ -63,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@android:color/holo_green_dark"
-        android:text="   Got it!   "
+        android:text="@string/rules_got_it"
         android:layout_marginBottom="24dp"
         android:textAllCaps="false"
         android:textSize="24sp" />

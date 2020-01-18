@@ -11,10 +11,18 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var firstResultDie: ImageView
+    lateinit var secondResultDie: ImageView
+    lateinit var thirdResultDie: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        firstResultDie = findViewById(R.id.first_die_image_imageview)
+        secondResultDie = findViewById(R.id.second_die_image_imageview)
+        thirdResultDie = findViewById(R.id.third_die_image_imageview)
 
         val rollButton: Button = findViewById(R.id.roll_dice_button)
         val showRulesTextView: TextView = findViewById(R.id.show_rules_button)
@@ -32,9 +40,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        val firstResultDie: ImageView = findViewById(R.id.first_die_image_imageview)
-        val secondResultDie: ImageView = findViewById(R.id.second_die_image_imageview)
-        val thirdResultDie: ImageView = findViewById(R.id.third_die_image_imageview)
 
 
         val dieOneRoll = Random().nextInt(6) + 1

@@ -37,7 +37,7 @@
             android:layout_width="168dp"
             android:layout_height="168dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/dice_2"
+            android:src="@drawable/dice_1"
             />
 
         <ImageView
@@ -45,7 +45,7 @@
             android:layout_width="168dp"
             android:layout_height="168dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/dice_2"
+            android:src="@drawable/dice_4"
             />
 
 

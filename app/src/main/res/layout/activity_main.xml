@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#F4CC70"
-    android:id="@+id/main_container"
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
@@ -14,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CeeLo"
-        android:textColor="#FFF"
+        android:background="#FFF"
+        android:textColor="@color/colorPrimary"
         android:textSize="40sp"
         android:gravity="center"
         />
@@ -57,18 +57,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/circle"
-
         android:textSize="32sp"
         android:text="@string/roll"
         android:layout_marginTop="24dp"
         android:textAllCaps="false"
         />
 
-    <Button
+    <TextView
         android:id="@+id/show_rules_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show Rules"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorPrimary"
         android:textSize="24sp"
         android:layout_gravity="center_horizontal"
         android:textAllCaps="false"

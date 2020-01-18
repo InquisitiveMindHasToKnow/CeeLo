@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,20 +22,48 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice() {
-        val resultDice: ImageView = findViewById(R.id.dice_image_imageview)
+        val firstResultDie: ImageView = findViewById(R.id.first_die_image_imageview)
+        val secondResultDie: ImageView = findViewById(R.id.second_die_image_imageview)
+        val thirdResultDie: ImageView = findViewById(R.id.third_die_image_imageview)
 
-        val randomNumberRolled = Random().nextInt(6) + 1
 
-       val dieToShow = when(randomNumberRolled){
+        val dieOneRoll = Random().nextInt(6) + 1
+        val dieTwoRoll = Random().nextInt(6) + 1
+        val dieThreeRoll = Random().nextInt(6) + 1
+
+
+        val dieOne = when (dieOneRoll) {
 
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
-            else  -> R.drawable.dice_6
+            else -> R.drawable.dice_6
         }
 
-        resultDice.setImageResource(dieToShow)
+        val dieTwo = when (dieTwoRoll) {
+
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+
+        val dieThree = when (dieThreeRoll) {
+
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+
+        firstResultDie.setImageResource(dieOne)
+        secondResultDie.setImageResource(dieTwo)
+        thirdResultDie.setImageResource(dieThree)
     }
 }

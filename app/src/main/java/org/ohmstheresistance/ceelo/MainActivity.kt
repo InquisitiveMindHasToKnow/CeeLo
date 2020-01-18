@@ -1,8 +1,10 @@
 package org.ohmstheresistance.ceelo
 
+import android.graphics.Paint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -15,14 +17,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val rollButton: Button = findViewById(R.id.roll_dice_button)
-        val showRulesButton: Button = findViewById(R.id.show_rules_button)
+        val showRulesTextView: TextView = findViewById(R.id.show_rules_button)
+        showRulesTextView.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
         rollButton.setOnClickListener {
             rollDice()
         }
 
 
-        showRulesButton.setOnClickListener {
+        showRulesTextView.setOnClickListener {
             showRules()
         }
 

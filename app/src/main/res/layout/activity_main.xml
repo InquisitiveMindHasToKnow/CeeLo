@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F4CC70"
+    android:background="@color/mainBackgroundColor"
     android:layout_gravity="center_vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CeeLo"
-        android:background="#FFF"
-        android:textColor="@color/colorPrimary"
+        android:text="@string/ceelo_header"
+        android:background="@color/headerBackgroundColor"
+        android:textColor="@color/textColor"
         android:textSize="40sp"
         android:gravity="center"
         />
@@ -67,9 +67,9 @@
         android:id="@+id/show_rules_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Rules"
+        android:text="@string/show_rules"
         android:layout_marginTop="16dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/textColor"
         android:textSize="24sp"
         android:layout_gravity="center_horizontal"
         android:textAllCaps="false"

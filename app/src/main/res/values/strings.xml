@@ -4,4 +4,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="show_rules">Show Rules</string>
+    <string name="rules">Rules:</string>
+    <string name="rules_automatic_win">Automatic win: rolling a 4-5-6.</string>
+    <string name="rules_automatic_loss">Automatic loss: rolling a 1-2-3.</string>
+    <string name="rules_trips">Trips: rolling three same numbers is known as rolling a trip. Higher trips beat lower trips, so 4-4-4 is better than 3-3-3. Any trips beats any established point.</string>
+    <string name="rules_point">Point: rolling a pair, and another number, establishes the singleton as a \'point\'. A higher point beats a lower point, so 2-2-6 is better than 5-5-2.</string>
+    <string name="rules_all_other_rolls">Any other roll is a meaningless combination and must be rerolled until one of the above combinations occurs.</string>
+    <string name="rules_got_it">Got it!</string>
+    <string name="ceelo_header">CeeLo</string>
 </resources>

@@ -1,10 +1,11 @@
 package org.ohmstheresistance.ceelo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,9 +15,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val rollButton: Button = findViewById(R.id.roll_dice_button)
-        rollButton.setOnClickListener {
+        val showRulesButton: Button = findViewById(R.id.show_rules_button)
 
+        rollButton.setOnClickListener {
             rollDice()
+        }
+
+
+        showRulesButton.setOnClickListener {
+            showRules()
         }
 
     }
@@ -65,5 +72,12 @@ class MainActivity : AppCompatActivity() {
         firstResultDie.setImageResource(dieOne)
         secondResultDie.setImageResource(dieTwo)
         thirdResultDie.setImageResource(dieThree)
+    }
+
+    private fun showRules(){
+
+        val showCeeLoRulesDialog = CeeLoRules()
+        showCeeLoRulesDialog.show(supportFragmentManager, "CeeLoRulesDialog")
+
     }
 }

@@ -4,8 +4,10 @@ import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.graphics.PorterDuff
 import android.os.Bundle
+import android.os.Handler
 import android.view.MotionEvent
-import android.view.View
+
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.ohmstheresistance.ceelo.databinding.ActivityMainBinding
@@ -15,6 +17,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var pressBackTwiceToExit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         binding.thirdDieImageImageview.setImageResource(dieThree)
     }
 
-    private fun showRules(){
+    private fun showRules() {
 
         val showCeeLoRulesDialog = CeeLoRules()
         showCeeLoRulesDialog.show(supportFragmentManager, "CeeLoRulesDialog")
@@ -95,7 +98,10 @@ class MainActivity : AppCompatActivity() {
         binding.rollDiceButton.setOnTouchListener { view, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    view.background.setColorFilter(resources.getColor(R.color.buttonEffectColor), PorterDuff.Mode.SRC_ATOP)
+                    view.background.setColorFilter(
+                        resources.getColor(R.color.buttonEffectColor),
+                        PorterDuff.Mode.SRC_ATOP
+                    )
                     view.invalidate()
                 }
                 MotionEvent.ACTION_UP -> {
@@ -106,4 +112,21 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
+
+
+
+
+        override fun onBackPressed() {
+            if (pressBackTwiceToExit) {
+                super.onBackPressed()
+                return
+            }
+
+            this.pressBackTwiceToExit = true
+            Toast.makeText(this, "Please click BACK again to exit.", Toast.LENGTH_SHORT).show()
+
+            Handler().postDelayed(Runnable {
+                pressBackTwiceToExit = false }, 2000)
+        }
+
 }

@@ -2,7 +2,6 @@ package org.ohmstheresistance.ceelo
 
 import android.graphics.Paint
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.ohmstheresistance.ceelo.databinding.ActivityMainBinding
@@ -22,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         binding.thirdDieImageImageview
 
 
-        val showRulesTextView: TextView = findViewById(R.id.show_rules_textview)
-        showRulesTextView.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+        binding.showRulesTextview
+        binding.showRulesTextview.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
         binding.rollDiceButton.setOnClickListener {
             rollDice()

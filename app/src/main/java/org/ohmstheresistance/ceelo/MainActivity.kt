@@ -1,7 +1,11 @@
 package org.ohmstheresistance.ceelo
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
+import android.graphics.PorterDuff
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.ohmstheresistance.ceelo.databinding.ActivityMainBinding
@@ -26,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.rollDiceButton.setOnClickListener {
             rollDice()
+            buttonEffect()
         }
 
 
@@ -83,5 +88,22 @@ class MainActivity : AppCompatActivity() {
         val showCeeLoRulesDialog = CeeLoRules()
         showCeeLoRulesDialog.show(supportFragmentManager, "CeeLoRulesDialog")
 
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun buttonEffect() {
+        binding.rollDiceButton.setOnTouchListener { view, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    view.background.setColorFilter(resources.getColor(R.color.buttonEffectColor), PorterDuff.Mode.SRC_ATOP)
+                    view.invalidate()
+                }
+                MotionEvent.ACTION_UP -> {
+                    view.background.clearColorFilter()
+                    view.invalidate()
+                }
+            }
+            false
+        }
     }
 }

@@ -2,38 +2,35 @@ package org.ohmstheresistance.ceelo
 
 import android.graphics.Paint
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import org.ohmstheresistance.ceelo.databinding.ActivityMainBinding
 import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var firstResultDie: ImageView
-    lateinit var secondResultDie: ImageView
-    lateinit var thirdResultDie: ImageView
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.firstDieImageImageview
+        binding.secondDieImageImageview
+        binding.thirdDieImageImageview
 
 
-        firstResultDie = findViewById(R.id.first_die_image_imageview)
-        secondResultDie = findViewById(R.id.second_die_image_imageview)
-        thirdResultDie = findViewById(R.id.third_die_image_imageview)
-
-        val rollButton: Button = findViewById(R.id.roll_dice_button)
-        val showRulesTextView: TextView = findViewById(R.id.show_rules_button)
+        val showRulesTextView: TextView = findViewById(R.id.show_rules_textview)
         showRulesTextView.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
-        rollButton.setOnClickListener {
+        binding.rollDiceButton.setOnClickListener {
             rollDice()
         }
 
 
-        showRulesTextView.setOnClickListener {
+        binding.showRulesTextview.setOnClickListener {
             showRules()
         }
 
@@ -77,9 +74,9 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        firstResultDie.setImageResource(dieOne)
-        secondResultDie.setImageResource(dieTwo)
-        thirdResultDie.setImageResource(dieThree)
+        binding.firstDieImageImageview.setImageResource(dieOne)
+        binding.secondDieImageImageview.setImageResource(dieTwo)
+        binding.thirdDieImageImageview.setImageResource(dieThree)
     }
 
     private fun showRules(){

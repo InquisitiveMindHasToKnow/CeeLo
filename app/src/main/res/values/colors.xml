@@ -10,4 +10,12 @@
     <color name="headerBackgroundColor">#FFF</color>
 
     <color name="buttonEffectColor">#05445e</color>
+
+    <color name="oneDieColor">#001951</color>
+    <color name="twoDieColor">#2A231F</color>
+    <color name="threeDieColor">#A92420 </color>
+    <color name="fourDieColor">#FF69B4</color>
+    <color name="fiveDieColor">#004626</color>
+    <color name="sixDieColor">#FF5D00</color>
+
 </resources>
